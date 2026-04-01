@@ -5,19 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mei-Lab Calendar</title>
     <style>
-        .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: left;
-        justify-content: center;
-        width: 100%;
+        body {
+            font-family: Arial, sans-serif;
         }
-        .calendar-contaniner iframe {
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .calendar-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .calendar-container iframe {
             width: 100%;
             max-width: 800px;
             height: 600px;
         }
+
         .calendar-legend {
             display: flex;
             flex-direction: column;
@@ -25,22 +37,60 @@
             margin-bottom: 10px;
             gap: 15px;
         }
+
         .legend-item {
             display: flex;
             align-items: center;
             gap: 5px;
             font-size: 16px;
         }
+
         .legend-color {
             width: 16px;
             height: 16px;
             border-radius: 3px;
+        }
+
+        .calendar-note {
+            max-width: 800px;
+            width: 100%;
+            margin-top: 20px;
+            padding: 16px 20px;
+            background-color: #f7f7f7;
+            border-left: 4px solid #673AB7;
+            box-sizing: border-box;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .calendar-note p {
+            margin: 0 0 14px 0;
+        }
+
+        .calendar-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .add-calendar-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #f8b500;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button-wrapper {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Mei-Lab Calendar</h2>
+
         <div class="calendar-legend">
             <div class="legend-item">
                 <div class="legend-color" style="background-color: #673AB7;"></div>
@@ -51,16 +101,38 @@
                 <span>研究室行事 / Lab schedule</span>
             </div>
         </div>
-    <div style="display: flex; justify-content: center;">
-        <iframe src="https://calendar.google.com/calendar/embed?src=baiho.kan.d7@tohoku.ac.jp&color=%235229A3&src=c_74c25a76619d34d0bd24b4a772b5aa2c01926824b6fb224efa90bd631851db2a@group.calendar.google.com&color=%23F8B500&ctz=Asia/Tokyo"
-            style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="https://calendar.google.com/calendar/u/0/r?cid=c_74c25a76619d34d0bd24b4a772b5aa2c01926824b6fb224efa90bd631851db2a@group.calendar.google.com" 
-           target="_blank" 
-           style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #f8b500; text-decoration: none; border-radius: 5px;">
-            ➕ Add & Edit Lab Calendar in Google Calendar
-        </a>
+
+        <div class="calendar-container">
+            <iframe
+                src="https://calendar.google.com/calendar/embed?src=baiho.kan.d7@tohoku.ac.jp&color=%235229A3&src=c_74c25a76619d34d0bd24b4a772b5aa2c01926824b6fb224efa90bd631851db2a@group.calendar.google.com&color=%23F8B500&ctz=Asia/Tokyo"
+                style="border: 0"
+                width="800"
+                height="600"
+                frameborder="0"
+                scrolling="no">
+            </iframe>
+        </div>
+
+        <div class="calendar-note">
+            <p>
+                このカレンダーページは、メイ先生の予定確認用です。<br>
+                機器予約などを行う場合は、下のボタンからこのカレンダーを自分のカレンダーに追加し、<br>
+                Google カレンダー上で編集してください。
+            </p>
+            <p>
+                This calendar page is for checking Mei-sensei’s schedule only.<br>
+                If you need to make instrument reservations or other edits, please click the button below to add this calendar to your own calendar and edit it in Google Calendar.
+            </p>
+        </div>
+
+        <div class="button-wrapper">
+            <a
+                href="https://calendar.google.com/calendar/u/0/r?cid=c_74c25a76619d34d0bd24b4a772b5aa2c01926824b6fb224efa90bd631851db2a@group.calendar.google.com"
+                target="_blank"
+                class="add-calendar-button">
+                ➕ Add & Edit Lab Calendar in Google Calendar
+            </a>
+        </div>
     </div>
 </body>
 </html>
